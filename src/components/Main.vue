@@ -102,7 +102,7 @@
         </a>
       </span>
       <span class="link-block">
-        <a href="https://github.com/mat-agent/MAT-Agent" class="external-link button is-normal is-rounded is-dark">
+        <a href="https://github.com/SPORT-Agents/SPORT-Agents" class="external-link button is-normal is-rounded is-dark">
           <span class="icon">
             <i class="fab fa-github"></i>
           </span>
