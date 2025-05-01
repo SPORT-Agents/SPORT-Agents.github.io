@@ -31,7 +31,7 @@
         </span>
         <span class="author">
           <el-link href="https://scholar.google.com/citations?user=xr7kNGEAAAAJ&hl">Yapeng Mi</el-link>
-          <span class="ind">2</span>,
+          <span class="ind">2,4</span>,
         </span>
         </span>
         <span class="author">
@@ -49,17 +49,17 @@
         </span>
         <span class="author">
           <el-link href="https://wu-yuwei-bit.github.io/">Yuwei Wu</el-link>
-          <span class="ind">&#9993;1,4</span>,
+          <span class="ind">&#9993;1,5</span>,
         </span>
         
 
         <span class="author">
           <el-link href="https://scholar.google.com/citations?user=Sl6TV7gAAAAJ&hl=en">Yunde Jia</el-link>
-          <span class="ind">4,1</span>,
+          <span class="ind">5</span>,
         </span>
         <span class="author">
           <el-link href="https://www.zhusongchun.net/">Song-Chun Zhu</el-link>
-          <span class="ind">2,3,5</span>,
+          <span class="ind">2,3,6</span>,
         </span>
         <span class="author">
           <el-link href="https://liqing.io/">Qing Li</el-link>
@@ -82,10 +82,14 @@
         </span>
         <span class="org">
           <span class="ind">4</span>
-          Shenzhen MSU-BIT University
+          Harbin Institute of Technology
         </span>
         <span class="org">
           <span class="ind">5</span>
+          Shenzhen MSU-BIT University
+        </span>
+        <span class="org">
+          <span class="ind">6</span>
           Tsinghua University
         </span>
       </div>
