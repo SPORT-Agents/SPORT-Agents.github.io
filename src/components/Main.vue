@@ -33,6 +33,14 @@
         <iframe src="https://tongui-agent.github.io/" frameborder="0"></iframe>
       </div>
     </div>
+    <div class="research-link-wrapper">
+      <a class="research-link" href="https://computer-use-agents.github.io/macos/" target="_blank">
+        MacOS Agent <span class="conf-tag">[Open-source Project]</span>
+      </a>
+      <div class="preview-popup">
+        <iframe src="https://computer-use-agents.github.io/macos/" frameborder="0"></iframe>
+      </div>
+    </div>
   </div>
 
   <head>
