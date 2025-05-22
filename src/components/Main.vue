@@ -43,7 +43,7 @@
   <div class="main">
     <div class="section header">
       <div class="title">
-        <img class="mat-icon" src="/icon.svg" alt="MAT icon">
+        <img class="mat-icon" src="/icon2.png" alt="SPORT icon">
         SPORT
       </div>
       <div class="subtitle">
