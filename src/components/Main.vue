@@ -1,4 +1,39 @@
 <template>
+  <div class="research-bar">
+    <span class="research-title">More Research:</span>
+    <div class="research-link-wrapper">
+      <a class="research-link" href="https://clova-tool.github.io/" target="_blank">
+        CLOVA <span class="conf-tag">[CVPR 2024]</span>
+      </a>
+      <div class="preview-popup">
+        <iframe src="https://clova-tool.github.io/" frameborder="0"></iframe>
+      </div>
+    </div>
+    <div class="research-link-wrapper">
+      <a class="research-link" href="https://mm-fire.github.io/#" target="_blank">
+        FIRE <span class="conf-tag">[NeurIPS 2024]</span>
+      </a>
+      <div class="preview-popup">
+        <iframe src="https://mm-fire.github.io/#" frameborder="0"></iframe>
+      </div>
+    </div>
+    <div class="research-link-wrapper">
+      <a class="research-link" href="https://mat-agent.github.io/" target="_blank">
+        MAT <span class="conf-tag">[ICLR 2025]</span>
+      </a>
+      <div class="preview-popup">
+        <iframe src="https://mat-agent.github.io/" frameborder="0"></iframe>
+      </div>
+    </div>
+    <div class="research-link-wrapper">
+      <a class="research-link" href="https://tongui-agent.github.io/" target="_blank">
+        TongUI <span class="conf-tag">[Arxiv]</span>
+      </a>
+      <div class="preview-popup">
+        <iframe src="https://tongui-agent.github.io/" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
 
   <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -12,8 +47,7 @@
         SPORT
       </div>
       <div class="subtitle">
-         Iterative Trajectory Exploration for Multimodal Agents 
-
+        Iterative Tool Usage Exploration for Multimodal Agents via Step-wise Preference Tuning
       </div>
 
 
@@ -250,7 +284,7 @@
           All collected preference comparisons are aggregated into a training dataset. The agent then updates its policy via a preference‐based optimization procedure—referencing the previous policy—to increase the likelihood of the preferred actions over the alternatives.
         </li>
       </ol>
-      <p class="intro">After tuning, the updated policy becomes the new reference, and the entire cycle—task generation, step sampling, LLM verification, and preference‐driven refinement—repeats until the agent’s performance stabilizes and converges.</p>
+      <p class="intro">After tuning, the updated policy becomes the new reference, and the entire cycle—task generation, step sampling, LLM verification, and preference‐driven refinement—repeats until the agent's performance stabilizes and converges.</p>
       <el-card class="teaser">
         <el-image src="./stats/intro.jpg"></el-image>
       </el-card>
@@ -289,7 +323,7 @@
         multiple categories: web search, visual perception, image generation/editing, file understanding, multi-modal
         understanding, and multiple Python packages.
       </p>
-      <el-image class="stats-img" src="./stats/tools.png"></el-image>
+      <el-image class="stats-img" src="./stats/tools.png" style="width: 73%;"></el-image>
     </div>
 
     <!-- <div class="section">
@@ -310,25 +344,12 @@
       <div class="section-title">Evaluation and Results </div>
       <div class="intro">We evaluate the <b>SPORT Agent</b> on two benchmarks: <b>GTA</b> and <b>GAIA</b>. The results show that the SPORT Agent outperforms SFT baselines by <b>6.41%</b> on GTA and <b>3.64%</b> on GAIA, demonstrating that its online self-exploration loop with LLM‐guided step verification and preference tuning produces high-quality in-distribution preference data that substantially boosts tool usage and code execution success.<br></div>
 
+      <div class="intro"><b>Metrics.</b> In the <b>GTA</b> benchmark, we measure three metrics: <i><b>AnsAcc</b></i> (answer correctness), <i><b>ToolAcc</b></i> (tool selection and answer summary accuracy), and <i><b>CodeExec</b></i> (percentage of error-free code execution). In the <b>GAIA</b> benchmark, we measure <i><b>AnsAcc</b></i> across three difficulty levels.<br><br></div>
 
-      <div class="intro"><b>Metric.</b> In the <b>GTA</b> benchmark, we measure three metrics for agents, including
-        <i><b>AnsAcc</b></i>,
-        <i><b>ToolAcc</b></i>, and <i><b>CodeExec</b></i>. <i><b>AnsAcc</b></i> measures the correctness of predicted
-        answers. <i><b>ToolAcc</b></i> means the accuracy of tool selection and answer summary. <i><b>CodeExec</b></i>
-        quantifies the percentage of generated codes that could be executed without errors. In the <b>GAIA</b>
-        benchmark, we measure <i><b>AnsAcc</b></i> of its three levels.<br><br>
-      </div>
+      <div class="intro"><b>Results.</b> As shown in the table below, our <b>SPORT Agent</b> achieves significant improvements across both benchmarks. On GTA, it outperforms SFT-based T3-Agent by <b>+7%</b> in <i><b>AnsAcc</b></i>, <b>+8%</b> in <i><b>ToolAcc</b></i>, and <b>+7%</b> in <i><b>CodeExec</b></i>. Even compared to HF agent using GPT-4o, our agent achieves <b>higher <i>ToolAcc</i></b> with <i>comparable CodeExec</i>. On GAIA, <b>SPORT Agent</b> achieves the <b>best results among open-source models</b>, outperforming Qwen2-VL-7B by <b>+11%</b> on <i><b>AnsAcc</b></i> and improving <b>+4%</b> over the SFT-tuned MAT-Qwen2-VL-7B. These consistent improvements across all difficulty levels highlight the effectiveness of our online self-exploration framework.<br><br></div>
 
-      <div class="intro"><b>GTA Results.</b> As shown in Table 1, our <b>SPORT Agent</b> outperforms both Lego and HF agents that use closed-source models like GPT-4 and GPT-4o. Compared to SFT-based T3-Agent, SPORT Agent demonstrates significant improvements: <b>+7%</b> in <i><b>AnsAcc</b></i>, <b>+8%</b> in <i><b>ToolAcc</b></i>, and <b>+7%</b> in <i><b>CodeExec</b></i>. Even when compared with HF agent using GPT-4o, our agent achieves <b>higher <i>ToolAcc</i></b> with <i>comparable CodeExec</i>, highlighting the effectiveness of our step-wise optimization approach in enhancing planning and reasoning capabilities.<br>
-      </div>
- 
       <el-card class="stats-img-1">
-        <el-image src="./stats/gta_result.png"></el-image>
-      </el-card>
-      <br>
-      <div class="intro"><b>GAIA Results.</b> On the GAIA validation set, <b>SPORT Agent</b> achieves the <b>best results among open-source models</b>, outperforming Qwen2-VL-7B by <b>+11%</b> on <i><b>AnsAcc</b></i> and improving <b>+4%</b> over the SFT-tuned MAT-Qwen2-VL-7B. These consistent improvements across all difficulty levels highlight the effectiveness of our online self-exploration framework. While there remains a small gap compared to closed-source models like GPT-4, this is primarily due to their larger model sizes and more extensive training data.<br><br></div>
-      <el-card class="stats-img-1">
-        <el-image src="./stats/gaia_result.png"></el-image>
+        <el-image src="./stats/main_result.png"></el-image>
       </el-card>
     </div>
 
@@ -357,8 +378,8 @@ rather than comparing it with a specialized device.
       Our ablation study on the GTA benchmark examines the impact of iteration step size <i>d</i> ∈ {200, 500, 1000}. <b>Setting <i>d</i> = 500 achieves the best performance</b> across all metrics. Larger steps (<i>d</i> = 1000) limit adaptability, while smaller steps (<i>d</i> = 200) reduce data diversity. A moderate step size provides optimal balance between update frequency and diversity for effective training.
     </p>
     <br><br>
-    <el-card class="stats-img-1">
-      <el-image src="./stats/ablation_d.png"></el-image>
+    <el-card class="stats-img-2" style="max-width: 60%; margin: 0 auto;">
+      <el-image src="./stats/ablation_d.png" style="width: 100%;"></el-image>
     </el-card>
   </div>
 
@@ -372,8 +393,8 @@ rather than comparing it with a specialized device.
       In a separate study with 20 different researchers evaluating 50 sampled steps, we found <b>82% agreement</b> between our verifier's preferences and human judgments. This high overlap confirms that our automated verifier effectively captures human-like preferences for code accuracy, tool selection, and parameter correctness.
     </p>
     <br><br>
-    <el-card class="stats-img-1">
-      <el-image src="./stats/data_quality.png"></el-image>
+    <el-card class="stats-img-2" style="max-width: 60%; margin: 0 auto;">
+      <el-image src="./stats/data_quality.png" style="width: 100%;"></el-image>
     </el-card>
   </div>
   <section class="section" id="BibTeX" style="text-align: left;">
@@ -441,172 +462,318 @@ onMounted(() => {
 <style scoped>
 .main {
   text-align: center;
-  color: #333;
+  color: #23272f;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+  background: linear-gradient(120deg, #f8fbff 0%, #f3f6fa 100%);
 }
 
 .header {
-  margin: 60px 0 0 0 !important;
+  margin: 56px 0 32px 0 !important;
 }
 
 .title {
-  font-size: 5em;
+  font-size: 3.8em;
+  font-weight: 800;
+  color: #1a237e;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }
 
 .subtitle {
-  font-size: 2.5em;
-  color: #555;
+  font-size: 2.1em;
+  color: #374151;
+  font-weight: 500;
+  line-height: 1.3;
+  max-width: 1100px;
+  margin: 0 auto 12px auto;
+  letter-spacing: 0.01em;
 }
 
 .author-list {
-  margin-top: 20px;
+  margin: 18px 0 0 0;
+  line-height: 1.7;
+  font-size: 1.08em;
+  color: #2b3a4b;
 }
 
 .author a {
-  font-size: 1.2em;
-  font-weight: normal;
-  color: #337ecc;
+  font-size: 1em;
+  font-weight: 600;
+  color: #1976d2;
+  text-decoration: none;
+  border-bottom: 1px dotted #90caf9;
+  transition: color 0.2s, border-bottom 0.2s;
+}
+.author a:hover {
+  color: #0d47a1;
+  border-bottom: 1px solid #1976d2;
 }
 
 .org {
-  margin: 0 4px 0 4px;
+  margin: 0 4px;
+  color: #607d8b;
+  font-size: 0.98em;
 }
 
 .ind {
-  font-size: 0.8em;
+  font-size: 0.7em;
   vertical-align: super;
+  color: #90a4ae;
 }
 
 .section {
-  margin: 50px 0;
+  margin: 36px 0;
+  padding: 0 10px;
 }
 
 .tldr {
   text-align: left;
-  font-size: 1em;
-  max-width: 1360px;
-  line-height: 150%;
+  font-size: 1.08em;
+  max-width: 1100px;
+  line-height: 1.6;
+  margin: 28px auto 24px auto;
+  padding: 18px 24px;
+  background: linear-gradient(90deg, #e3f0fc 0%, #f5fafd 100%);
+  border-left: 4px solid #1976d2;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(25, 118, 210, 0.04);
 }
 
 .section-title {
-  margin: 20px;
-  font-size: 2em;
-  font-weight: bold;
+  margin: 32px 0 18px;
+  font-size: 1.7em;
+  font-weight: 700;
+  color: #1a237e;
+  text-align: left;
+  letter-spacing: 0.01em;
 }
 
 .conference {
   text-align: center;
-  margin: 20px;
-  font-size: 1.5em;
-  color: #665;
+  margin: 15px;
+  font-size: 1.2em;
+  color: #666;
 }
 
 .uns {
   text-decoration: underline;
+  text-decoration-color: #1976d2;
 }
 
 .mat-icon {
-  width: 1.1em;
-  height: 1.1em;
-  margin-right: 0.05em;
-  vertical-align: middle; /* Add vertical alignment to center the icon */
-  display: inline-block; /* Ensure proper alignment */
+  width: 1.3em;
+  height: 1.3em;
+  margin-right: 0.1em;
+  vertical-align: middle;
+  display: inline-block;
 }
 
-.teaser {
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.poster {
-  max-width: 80%;
-  margin: 0 auto;
+.teaser, .poster, .stats-img-1 {
+  max-width: 98%;
+  margin: 24px auto;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 12px 0 rgba(25, 118, 210, 0.06);
+  border: 1px solid #e3eaf2;
+  overflow: hidden;
 }
 
 .stats-img {
-  height: 300px;
-}
-
-.stats-img-1 {
-  max-width: 67%;
-  max-height: 95%;
-  object-fit: contain;
-  margin: 0 auto;
-  display: block;
+  height: auto;
+  max-width: 100%;
+  margin: 15px auto;
 }
 
 .intro {
   text-align: justify;
-  font-size: 1em;
-  max-width: 1360px;
-  line-height: 150%;
+  font-size: 1.08em;
+  max-width: 1100px;
+  line-height: 1.6;
+  margin: 0 auto 12px auto;
+  color: #23272f;
 }
 
-.link-block a {
-  margin-top: 5px;
-  margin-bottom: 5px;
+.link-block {
+  margin: 18px 0;
 }
 
-.example-dialog {
-  width: 800px;
-}
-
-.footer {
-  color: #aaa;
-  margin: 100px 0 60px 0;
-}
-
-
-/* The top button */
 .external-link {
-  display: inline-block;
-  padding: 8px 16px;
-  /* inner margin */
-  margin: 4px;
-  /* outer margin */
-  border: 1px solid #9a9c9e;
-  /* color of border */
-  border-radius: 9px;
-  background-color: #8a8b8b;
-  color: white;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 22px;
+  margin: 6px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #1976d2 0%, #64b5f6 100%);
+  color: #fff;
   text-decoration: none;
-  font-size: 20px;
-  transition: background-color 0.3s;
+  font-size: 1em;
+  font-weight: 600;
+  box-shadow: 0 2px 8px 0 rgba(25, 118, 210, 0.08);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
 }
-
 .external-link:hover {
-  background-color: #8e8f90;
+  background: linear-gradient(90deg, #1565c0 0%, #42a5f5 100%);
+  box-shadow: 0 4px 16px 0 rgba(25, 118, 210, 0.13);
+  transform: translateY(-2px) scale(1.03);
 }
-
 .external-link .icon {
-  margin-right: 8px;
-}
-
-.external-link .fas {
-  font-size: 18px;
+  margin-right: 10px;
+  color: #e3f2fd;
 }
 
 .bibtex-container {
-  background-color: #e1e4e9;
-  /* Change background color to match the theme */
-  padding: 1em;
-  /* Add padding for better readability */
-  border-radius: 5px;
-  /* Add border radius for rounded corners */
+  background: #f5fafd;
+  padding: 1.2em;
+  border-radius: 8px;
   text-align: left;
   white-space: pre;
-  /* Preserve formatting and prevent line breaks */
   overflow-x: auto;
-  /* Add horizontal scroll bar */
+  border: 1px solid #e3eaf2;
+  margin: 18px 0;
 }
 
 pre {
   margin: 0;
+  font-family: 'Fira Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 }
 
 code {
-  font-family: 'Courier New', Courier, monospace;
-  /* Change font to monospace */
-  color: #0a0b0b;
-  /* Change text color to match the theme */
+  font-family: 'Fira Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  color: #23272f;
+  font-size: 0.98em;
+}
+
+.footer {
+  color: #90a4ae;
+  margin: 60px 0 30px;
+  font-size: 0.98em;
+  text-align: center;
+}
+.footer a {
+  color: #1976d2;
+  text-decoration: none;
+  border-bottom: 1px dotted #90caf9;
+  transition: color 0.2s, border-bottom 0.2s;
+}
+.footer a:hover {
+  color: #0d47a1;
+  border-bottom: 1px solid #1976d2;
+}
+
+@media (max-width: 900px) {
+  .main {
+    max-width: 100vw;
+    padding: 0 6px;
+  }
+  .title {
+    font-size: 2.2em;
+  }
+  .subtitle {
+    font-size: 1.1em;
+  }
+  .section {
+    padding: 0 2px;
+  }
+  .stats-img-1, .teaser, .poster {
+    max-width: 100%;
+  }
+  .tldr, .intro {
+    max-width: 98vw;
+  }
+}
+
+.research-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 18px 0 8px 0;
+  background: transparent;
+  font-size: 1.08em;
+  flex-wrap: wrap;
+  position: relative;
+}
+.research-title {
+  color: #1976d2;
+  font-weight: 700;
+  margin-right: 8px;
+}
+.research-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: 6px;
+  background: #e3f0fc;
+  color: #1a237e;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 2px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  box-shadow: 0 1px 4px 0 rgba(25, 118, 210, 0.06);
+}
+.research-link:hover {
+  background: #1976d2;
+  color: #fff;
+  box-shadow: 0 2px 8px 0 rgba(25, 118, 210, 0.13);
+}
+.conf-tag {
+  font-size: 0.95em;
+  font-weight: 400;
+  color: #1976d2;
+  background: #e3f0fc;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-left: 6px;
+  transition: color 0.18s, background 0.18s;
+}
+.research-link:hover .conf-tag {
+  color: #fff;
+  background: #1565c0;
+}
+.research-link-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.preview-popup {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 110%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 600px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(25, 118, 210, 0.18);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+  overflow: hidden;
+}
+.research-link-wrapper:hover .preview-popup {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+.preview-popup iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  opacity: 0.85;
+  border-radius: 10px;
+}
+@media (max-width: 900px) {
+  .preview-popup {
+    display: none !important;
+  }
 }
 </style>
