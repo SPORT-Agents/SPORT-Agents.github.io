@@ -181,7 +181,7 @@
           <span>Video</span>
         </a>
       </span> -->
-      <!-- <span class="link-block">
+      <span class="link-block">
      
         <a target="_blank" href="https://huggingface.co/li-qing/llava-next-llama3-8b-student-fire/tree/main"
           class="external-link button is-normal is-rounded is-dark">
@@ -190,7 +190,7 @@
           </span>
           <span>Model</span>
         </a>
-      </span> -->
+      </span>
       <!-- <span class="link-block">
  
         <a target="_blank" href="https://li-qing-fire.hf.space"
