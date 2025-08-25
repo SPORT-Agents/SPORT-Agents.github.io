@@ -183,7 +183,7 @@
       </span> -->
       <span class="link-block">
      
-        <a target="_blank" href="https://huggingface.co/li-qing/llava-next-llama3-8b-student-fire/tree/main"
+        <a target="_blank" href="https://huggingface.co/PengxiangLi/SPORT-Qwen2-VL-7B-Lora"
           class="external-link button is-normal is-rounded is-dark">
           <span class="icon">
             <i class="fa fa-share-square"></i>
